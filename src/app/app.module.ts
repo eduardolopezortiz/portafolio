@@ -8,6 +8,8 @@ import { PortafolioComponent } from './pages/portafolio/portafolio.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ItemComponent } from './pages/item/item.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 //rutas
 import { AppRoutingModule } from './app-routing.module';
 
@@ -22,7 +24,8 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule//se agrego
   ],
   providers: [],
   bootstrap: [AppComponent]
