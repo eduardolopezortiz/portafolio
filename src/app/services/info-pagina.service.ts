@@ -33,7 +33,7 @@ export class InfoPaginaService {
 //meotod para caragar la info de firebase a nuestra pagina
   private cargarEquipo() {
     // Leer el archivo JSON
-    this.http.get('https://angular-html-7cf20-default-rtdb.firebaseio.com/.json')
+    this.http.get('https://angular-html-7cf20-default-rtdb.firebaseio.com/equipo.json')
     .subscribe( (resp: any[]) => {
 
      
