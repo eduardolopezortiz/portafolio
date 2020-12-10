@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { InfoPaginaService } from './services/info-pagina.service';
+import { ProductosService } from './services/productos.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,9 @@ export class AppComponent {
   /**
    *
    */
-  constructor( public infoPaginaService: InfoPaginaService ) {
+  //se manda llamar el servicio de productos
+  constructor( public infoPaginaService: InfoPaginaService, 
+                public productosService: ProductosService  ) {
    
     
   }
