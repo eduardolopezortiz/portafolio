@@ -10,7 +10,7 @@ const app_routes: Routes =[
 
     {path: 'home', component: PortafolioComponent },
     {path: 'about', component: AboutComponent },
-    {path: 'item', component: ItemComponent },
+    {path: 'item/:id', component: ItemComponent },//especificar que cuando quiera navegar al item debo mandar el id del item que se quiere mostrar
     {path: '**', pathMatch: 'full', redirectTo: 'home' }
 
 

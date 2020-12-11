@@ -1,32 +1,36 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Producto  } from '../interfaces/producto.interface';
+import { Producto } from '../interfaces/producto.interface';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-  
+
   cargando = true;//bandera que indique cuando estan cargando los productos
   productos: Producto[] = []; //arreglo de productos
 
 
-  constructor(private http: HttpClient ) {
-this.cargarProductos();
-   }
+  constructor(private http: HttpClient) {
+    this.cargarProductos();
+  }
 
-//metodo para cargar producto
-private cargarProductos(){
-  this.http.get('https://angular-html-7cf20-default-rtdb.firebaseio.com/productos_idx.json')//definicion de la peticion
-  .subscribe( (resp: Producto[]) => {
+  //metodo para cargar producto
+  private cargarProductos() {
+    this.http.get('https://angular-html-7cf20-default-rtdb.firebaseio.com/productos_idx.json')//definicion de la peticion
+      .subscribe((resp: Producto[]) => {
 
-    console.log(resp);
-    this.productos = resp;
-    
-    setTimeout(() => {
-      this.cargando = false;
+        console.log(resp);
+        this.productos = resp;
+        setTimeout(() => {
+          this.cargando = false;
 
-    }, 500);
+        }, 500);
 
-  });
-}
+      });
+  }
+
+  //metodo para regresar un producto
+  getProducto(id: string){
+    return this.http.get(`https://angular-html-7cf20-default-rtdb.firebaseio.com/productos/${id}.json`);
+  }
 }
