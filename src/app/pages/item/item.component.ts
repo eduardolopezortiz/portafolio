@@ -14,7 +14,8 @@ export class ItemComponent implements OnInit {
 
     //llamar la instruccion
     this.route.params
-    .subscribe( parametros =>{
+    .subscribe( parametros =>{//el subcribe estara al pendiente de todos los cambios que se sucedan con los parametros de la url
+
       console.log(parametros ['id']);
     });
 
